@@ -1,0 +1,10 @@
+
+<div class="well" id="filter">
+  <div class="container">
+    <span ng-repeat="letter in alphabet">
+      <button class="btn btn-primary" ng-disabled="doesItExist(letter)">
+        {{letter}}
+      </button>
+    </span>
+  </div>
+</div>

@@ -38,6 +38,26 @@ describe('testing api routes', function () {
       .end(done);
   });
 
+  it('/api/products sends all the products', function (done) {
+    agent
+      .get('/api/products')
+      .expect(200)
+      .expect(function(res) {
+        expect(res.body.length).to.be.above(20)
+      })
+      .end(done);
+  });
+
+  it('/api/employees sends all the employees', function (done) {
+    agent
+      .get('/api/employees')
+      .expect(200)
+      .expect(function(res) {
+        expect(res.body.length).to.be.above(20)
+      })
+      .end(done);
+  });
+
   it('/api/products/a route to have results greater than 3', function (done) {
     agent
       .get('/api/products/a')

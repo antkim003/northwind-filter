@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Northwind Filter</title>
+    <base href="/">
+
+    <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript" src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+    <!--external CSS dependencies-->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="browser/components/filter/filter.css">
+
+    <!--external JS dependencies-->
+    <script type="text/javascript" src="browser/app/main.js"></script>
+    <script type="text/javascript" src="browser/components/navbar/navbar.directive.js"></script>
+    <script type="text/javascript" src="browser/app/employees/employees.state.js"></script>
+    <script type="text/javascript" src="browser/app/home/home.state.js"></script>
+    <script type="text/javascript" src="browser/app/products/products.state.js"></script>
+    <script type="text/javascript" src="browser/app/employees/employees.controller.js"></script>
+    <script type="text/javascript" src="browser/app/home/home.controller.js"></script>
+    <script type="text/javascript" src="browser/app/products/products.controller.js"></script>
+    <script type="text/javascript" src="browser/components/filter/filter.directive.js"></script>
+    <script type="text/javascript" src="browser/app/util/request.factory.js"></script>
+</head>
+<body ng-app="northwind">
+  <navbar></navbar>
+  <ui-view></ui-view>
+  <footer></footer>
+</body>
+</html>

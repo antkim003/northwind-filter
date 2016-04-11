@@ -2,16 +2,20 @@
   "name": "northwind-filter",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server/index.js",
   "scripts": {
-    "start": "node ./server",
-    "test" : "node ./node_modules/mocha/bin/mocha",
-    "seed" : "node seed"
+    "start": "nodemon --watch server",
+    "test": "node ./node_modules/mocha/bin/mocha",
+    "seed": "node seed"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "angular": "^1.5.3",
+    "angular-ui-router": "^0.2.18",
+    "bootstrap": "^3.3.6",
     "express": "^4.13.4",
+    "lodash": "^4.10.0",
     "mongoose": "^4.4.12"
   },
   "devDependencies": {
