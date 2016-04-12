@@ -4,21 +4,25 @@ app.directive('filter', function($state, EmployeeFactory, ProductFactory) {
   return {
     restrict: 'E',
     scope: {
-      letters: '='
+      letters: '=',
+      link: '='
     },
     templateUrl: 'browser/components/filter/filter.html',
     link: function(scope, element, attr) {
       var alphabet = "abcdefghijklmnopqrstuvwxyz".split('');
       scope.alphabet = alphabet;
 
-      scope.doesItExist = function(letter) {
-        if (attr.letters.indexOf(letter) > 0) {
-          return true;
-        } else {
+      scope.doesItExist = function(letters, letter) {
+        if (letters.indexOf(letter) >= 0) {
           return false;
+        } else {
+          return true;
         }
       }
 
+      scope.goRoute = function(link, letter) {
+        $state.go(link, {letter: letter});
+      }
     }
   }
 });

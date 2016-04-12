@@ -2,7 +2,7 @@
 <div class="well" id="filter">
   <div class="container">
     <span ng-repeat="letter in alphabet">
-      <button class="btn btn-primary" ng-disabled="doesItExist(letter)">
+      <button class="btn btn-primary" ng-click="goRoute(link, letter)" ng-disabled="doesItExist(letters, letter)">
         {{letter}}
       </button>
     </span>

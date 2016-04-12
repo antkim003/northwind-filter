@@ -20,12 +20,12 @@ app.get('/', function(req, res, next) {
 
 app.use('/api', require('./api/api.router'));
 
-app.get('/products', function(req, res, next) {
-  res.send('products');
-});
-
-app.get('/employees', function(req, res, next) {
-  res.send('employees');
+var validFrontendRoutes = ['/', '/products', '/employees', '/products/:letter', '/employees/:letter'];
+var indexPath = path.join(__dirname, '..', '..', 'public', 'index.html');
+validFrontendRoutes.forEach(function (stateRoute) {
+  app.get(stateRoute, function (req, res) {
+    res.sendFile(indexPath);
+  });
 });
 
 module.exports = app;

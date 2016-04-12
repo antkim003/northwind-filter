@@ -11,6 +11,10 @@ app.factory('ProductFactory', function($http) {
     return $http.get('/api/products/list')
   };
 
+  productObj.byLetters = function(letter) {
+    return $http.get('/api/products/' + letter);
+  }
+
   return productObj;
 });
 
@@ -23,6 +27,10 @@ app.factory('EmployeeFactory', function($http) {
 
   employeeObj.getLetters = function() {
     return $http.get('/api/employees/list')
+  };
+
+  employeeObj.byLetters = function(letter) {
+    return $http.get('/api/employees/' + letter);
   };
 
   return employeeObj;
