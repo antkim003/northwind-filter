@@ -10,9 +10,9 @@ done...
 - model should be two things: products and employees
 - use faker to populate some fake data
 - build routes for different categories
-
-things to do...
-
 - build client side routes
 - client side unit testing???
 - html pages
+
+things to do...
+
