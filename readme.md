@@ -5,6 +5,8 @@ Practice with using directives to filter a list of dummy data.
 npm install
 npm start
 
+run server on port localhost:1337
+
 done...
 - build mongo model and data base for products and employees
 - model should be two things: products and employees
