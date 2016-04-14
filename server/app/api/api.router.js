@@ -12,25 +12,26 @@ router.get('/', function(req, res, next) {
 router.get('/employees', function(req, res, next) {
   Employee.find({})
     .then(function(employees) {
-      res.send(employees)
+      res.send(employees);
     });
 });
 
+//better naming-- is this a list of employees?
 router.get('/employees/list', function(req, res, next) {
-  // send a list of objects with which letters have names in them back
 
   Employee.find().then(function(employees) {
     var names = employees.map(function(employee) {
       return employee.name;
     });
     res.send(filter(names));
-  })
+  });
 
 });
 
 router.get('/products/list', function(req, res, next) {
-  // send a list of objects with which letters have names in them back
-
+  //you might be able to do this 
+  //Product.find().select('name').then()
+  //although I think you're better off sending back a hash of valid letters
   Product.find().then(function(products) {
     var names = products.map(function(product) {
       
@@ -64,6 +65,7 @@ function filter(names) {
   var resultList = {};
   var firstLetters;
   // change to only first letter
+  // why not just create a map? this way you don't need _
   firstLetters = names.map(function(name) {
     return name[0].toLowerCase();
   });
@@ -71,10 +73,11 @@ function filter(names) {
   return _.uniq(firstLetters);
 }
 
+//are you using this route?
 router.get('/products', function(req, res, next) {
   Employee.find({})
     .then(function(products) {
-      res.send(products)
+      res.send(products);
     });
 });
 

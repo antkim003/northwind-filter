@@ -1,4 +1,5 @@
 'use strict';
+//i don't think your models belong in your api
 
 var mongoose = require('mongoose');
 var db       = require('../../../db');

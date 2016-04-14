@@ -1,5 +1,10 @@
 'use strict';
 
+/*
+ * $http.get('someurl', function(result){
+ *    return result.data;//you forgot to do this
+ * });
+ */
 app.factory('ProductFactory', function($http) {
   var productObj = {};
 
@@ -8,12 +13,12 @@ app.factory('ProductFactory', function($http) {
   };
 
   productObj.getLetters = function() {
-    return $http.get('/api/products/list')
+    return $http.get('/api/products/list');
   };
 
   productObj.byLetters = function(letter) {
     return $http.get('/api/products/' + letter);
-  }
+  };
 
   return productObj;
 });

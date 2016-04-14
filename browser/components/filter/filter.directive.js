@@ -13,6 +13,8 @@ app.directive('filter', function($state, EmployeeFactory, ProductFactory) {
       scope.alphabet = alphabet;
 
       scope.doesItExist = function(letters, letter) {
+        console.log(letters);//see what this object is?
+        //thats why you have js errors
         if (letters.indexOf(letter) >= 0) {
           return false;
         } else {

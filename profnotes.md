@@ -1,0 +1,5 @@
+- you've got js errors you need to fix
+- watch your static routes
+- make sure you unwrap your $http request in your factories
+- don't hand in work with javascript errors 
+- you are better off sacrificing a feature then sending in code with errors

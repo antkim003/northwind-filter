@@ -4,8 +4,9 @@
 
 var mongoose = require('mongoose');
 var Promise = require('bluebird');
-Promise.promisifyAll(mongoose);
+Promise.promisifyAll(mongoose);//necessary?
 
+//use environment variables.. you wont be able to deploy this
 var dbURI = 'mongodb://localhost:27017/northwindfilter';
 
 var db = mongoose.connect(dbURI).connection;

@@ -1,7 +1,6 @@
 'use strict';
 
 var app    = require('./app');
-var db     = require('./db.js');
 
 var port = process.env.PORT || 1337;
 

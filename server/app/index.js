@@ -10,17 +10,17 @@ var path    = require('path');
 var root = path.join(__dirname,'..','..');
 var publicPath = path.join(root, 'public');
 app.use(express.static(publicPath));
-app.use(express.static(path.join(root, 'node_modules', '/bootstrap/dist')));
-app.use(express.static(root));
+app.use(express.static(path.join(root, 'node_modules', '/bootstrap/dist')));//you will eventually go nuts doing this
+app.use(express.static(root));//no good.. don't expose your entire project
 
 app.get('/', function(req, res, next) {
-  var indexPath = path.join(__dirname, '..', '..','public','index.html')
+  var indexPath = path.join(__dirname, '..', '..','public','index.html');
   res.sendFile(indexPath);
 });
 
 app.use('/api', require('./api/api.router'));
 
-var validFrontendRoutes = ['/', '/products', '/employees', '/products/:letter', '/employees/:letter'];
+var validFrontendRoutes = ['/', '/products', '/employees', '/products/:letter', '/employees/:letter'];//good
 var indexPath = path.join(__dirname, '..', '..', 'public', 'index.html');
 validFrontendRoutes.forEach(function (stateRoute) {
   app.get(stateRoute, function (req, res) {
